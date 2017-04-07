@@ -16,5 +16,17 @@ $ docker push <username>/kubeapp
 ``` bash
 $ kubectl run kubeapp --image=evalle/kubeapp --port=8080 --generator=run/v1
 ```
-note: `--generator=run/v1` is for creating a Replication controller not Deployment
+note: `--generator=run/v1` option is here for creating the *Replication controller* not the *Deployment*
+4. Create a service
+``` bash
+$ kubectl expose rc kubeapp --type=LoadBalancer --name=kubeapp-http
+```
+note: `rc` is for `replicationcontroller`
+5.  If you'tre using minikube for Kubernetes cluster run
+``` bash
+$ minikube service kubeapp-http
+```
+to get an `ip address` and `port` of your Kubernetes cluster, see this [issue](https://github.com/kubernetes/minikube/issues/384) for more info.  
+
+
 
