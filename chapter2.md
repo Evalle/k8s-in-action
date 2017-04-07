@@ -28,4 +28,8 @@ $ minikube service kubeapp-http
 ```
 to get an `ip address` and `port` of your Kubernetes cluster, see this [issue](https://github.com/kubernetes/minikube/issues/384) for more info.
 
+6. Scale up an application via:
+``` bash
+$ kubectl scale rc kubeapp --replicas=3
+```
 
