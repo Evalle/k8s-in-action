@@ -17,6 +17,7 @@ $ docker push <username>/kubeapp
 $ kubectl run kubeapp --image=evalle/kubeapp --port=8080 --generator=run/v1
 ```
 note: `--generator=run/v1` option is here for creating the *Replication controller* not the *Deployment*
+
 4. Create a service
 ``` bash
 $ kubectl expose rc kubeapp --type=LoadBalancer --name=kubeapp-http
