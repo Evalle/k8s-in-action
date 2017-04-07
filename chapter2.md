@@ -33,3 +33,8 @@ to get an `ip address` and `port` of your Kubernetes cluster, see this [issue](h
 $ kubectl scale rc kubeapp --replicas=3
 ```
 
+7. To view the Dashboard page run
+``` bash
+$ minikube service kubernetes-dashboard -n kube-system  
+```
+
