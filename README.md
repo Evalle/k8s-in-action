@@ -22,6 +22,7 @@ note: `--generator=run/v1` option is here for creating the *Replication controll
 $ kubectl expose rc kubeapp --type=LoadBalancer --name=kubeapp-http
 ```
 note: `rc` is for `replicationcontroller`
+
 5.  If you'tre using minikube for Kubernetes cluster run
 ``` bash
 $ minikube service kubeapp-http
