@@ -5,3 +5,7 @@
 $ kubectl get po <pod's name> -o yaml
 ```
 
+2. Deploy an app manually:
+``` bash
+$ kubectl start -f nodejs_app.yaml
+```
