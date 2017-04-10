@@ -24,3 +24,11 @@ Note: `The port exsposion is really helpful when you're trying to debug your pod
 $ kubectl create -f  nodejs-app-with-labels.yaml
 $ kubectl get po --show-labels
 ```
+
+5. To modify label of existing container run:
+``` bash
+$ kubectl label po kubapp-manual creation_method=manual
+$ kubectl label po kubapp-manual-v2 env=debug --overwrite
+```
+
+6. 
