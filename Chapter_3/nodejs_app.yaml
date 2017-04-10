@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: kubapp-manual
+spec:
+  containers:
+  - image: evalle/kubapp
+    name: kubapp 
+    ports: 
+    - containerPort: 8080
+      protocol: TCP
