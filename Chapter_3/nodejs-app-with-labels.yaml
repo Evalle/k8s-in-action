@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: kubapp-manual-v2
+  labels: 
+    creation_method: manual
+    env: prod
+spec:
+  containers:
+  - image: evalle/kubapp
+    name: kubapp 
