@@ -31,4 +31,9 @@ $ kubectl label po kubapp-manual creation_method=manual
 $ kubectl label po kubapp-manual-v2 env=debug --overwrite
 ```
 
-6. 
+6. To see namespaces run:
+``` bash
+$ kubectl get ns
+```
+
+
