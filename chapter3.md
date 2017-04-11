@@ -31,9 +31,13 @@ $ kubectl label po kubapp-manual creation_method=manual
 $ kubectl label po kubapp-manual-v2 env=debug --overwrite
 ```
 
-6. To see namespaces run:
+6. To see the namespaces run:
 ``` bash
 $ kubectl get ns
 ```
 
+7. To create the namespace from the file run:
+``` bash
+$ kubectl create -f custom-namespace.yaml
+```
 
