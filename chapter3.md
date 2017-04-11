@@ -41,3 +41,8 @@ $ kubectl get ns
 $ kubectl create -f custom-namespace.yaml
 ```
 
+8. To create a resource in the new namespace run:
+``` bash
+$ kubectl create -f nodejs_app.yaml --namespace=custom-namespace
+$ kubectl get po --all-namespases
+```
