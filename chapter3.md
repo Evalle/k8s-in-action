@@ -52,3 +52,8 @@ $ kubectl get po --all-namespases
 $ kubectl label node minikube --gpu=true
 $ kubectl get nodes -l gpu=true
 ```
+
+10. To mark node as unschedulable, run:
+``` bash
+$ kubectl patch nodes minikube -p '{"spec": {"unschedulable": true}}'
+```
