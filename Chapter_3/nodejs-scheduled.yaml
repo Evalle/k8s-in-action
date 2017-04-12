@@ -6,7 +6,7 @@ spec:
   nodeSelector:
     # There is the typo in the book, "true" value should be in the quotes
     # so the fixed version is gpu: "True" instead of gpu: true
-    gpu: "True"
+    gpu: "true"
   containers:
   - image: evalle/kubapp
     name: kubapp 
