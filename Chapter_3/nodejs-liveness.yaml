@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubapp-liveness
+spec:
+  containers:
+  - image: evalle/kubapp
+    name: kubapp
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+...
