@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubapp-gpu
+spec:
+  nodeSelector:
+    # There is the typo in the book, "true" value should be in the quotes
+    # so the fixed version is gpu: "True" instead of gpu: true
+    gpu: "True"
+  containers:
+  - image: evalle/kubapp
+    name: kubapp 
