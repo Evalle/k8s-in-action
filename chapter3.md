@@ -46,3 +46,9 @@ $ kubectl create -f custom-namespace.yaml
 $ kubectl create -f nodejs_app.yaml --namespace=custom-namespace
 $ kubectl get po --all-namespases
 ```
+
+9. To label the node run:
+``` bash
+$ kubectl label node minikube --gpu=true
+$ kubectl get nodes -l gpu=true
+```
