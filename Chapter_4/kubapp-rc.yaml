@@ -2,11 +2,14 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
+  # here is the name of the replication controller (RC)
   name: kubapp
 spec:
   replicas: 3
+  # what pods the RC is operating on
   selector:
     app: kubapp
+  # The pod template for creating new pods
   template:
     metadata:
       labels:
