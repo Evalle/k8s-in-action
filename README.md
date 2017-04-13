@@ -5,3 +5,4 @@ Examples from the book ["Kubernetes in Action"](https://www.manning.com/books/ku
 
 1. [Chapter 2](chapter2.md)
 2. [Chapter 3](chapter3.md) 
+3. [Chapter 4](chapter4.md) 
