@@ -57,3 +57,8 @@ $ kubectl get nodes -l gpu=true
 ``` bash
 $ kubectl patch nodes minikube -p '{"spec": {"unschedulable": true}}'
 ```
+
+11. To delete all pods, run:
+``` bash
+$ kubectl delete po --all
+```
