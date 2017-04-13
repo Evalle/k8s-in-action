@@ -9,7 +9,7 @@ spec:
   # what pods the RC is operating on
   selector:
     app: kubapp
-  # The pod template for creating new pods
+  # the pod template for creating new pods
   template:
     metadata:
       labels:
