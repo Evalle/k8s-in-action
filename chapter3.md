@@ -62,3 +62,8 @@ $ kubectl patch nodes minikube -p '{"spec": {"unschedulable": true}}'
 ``` bash
 $ kubectl delete po --all
 ```
+
+12. To delete all, run:
+``` bash
+$ kubectl delete all --all
+```
