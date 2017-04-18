@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: kubapp
+spec:
+  ports:
+  # The port this service will be available on
+  - port: 80
+  # The container port the service will forward to
+    targetPort: 8080
+  selector:
+    app: kubapp
+...
