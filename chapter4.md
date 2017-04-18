@@ -28,3 +28,9 @@ $ kubectl delete rc kubapp --cascade=false
 $ kubectl create -f kubapp-rs.yaml
 ```
 
+6. To see information about yours ReplicaSet run:
+``` bash
+$ kubectl describe rs
+```
+
+
