@@ -33,4 +33,13 @@ $ kubectl create -f kubapp-rs.yaml
 $ kubectl describe rs
 ```
 
+7. Example of scheduled job:
+``` 
+apiVersion: batch/v2alpha1
+kind: CronJob
+spec:
+  schedule: "0 3 * * *"
+  startingDeadlineSeconds: 15
+...
+```
 
