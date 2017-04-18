@@ -17,3 +17,14 @@ $ kubectl get po
 ``` bash
 $ kubectl scale rc kubapp --replicas=10
 ```
+
+4. To delete the RC without all pods, run:
+``` bash
+$ kubectl delete rc kubapp --cascade=false
+```
+
+5. To start a new ReplicaSet run
+``` bash
+$ kubectl create -f kubapp-rs.yaml
+```
+

@@ -1,0 +1,23 @@
+---
+# ReplicaSet example
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: kubapp
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - kubapp
+  template:
+    metadata: 
+      labels:
+        app: kubapp
+    spec:
+      containers: 
+      - name: kubapp
+        image: evalle/kubapp 
+...
