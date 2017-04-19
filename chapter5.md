@@ -14,4 +14,9 @@ $ kubectl get svc
 $ kubectl exec <name_of_the_pod> -- curl -s http://address
 ```
 
-4. 
+4. To configure session affinity on the service run:
+``` bash
+$ kubectl create -f kubapp-svc-affinity.yaml
+$ kubectl exec <name_of_the_pod> -- curl -s http://address
+```
+Note: you will hit the same pod 
