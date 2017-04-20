@@ -20,3 +20,8 @@ $ kubectl create -f kubapp-svc-affinity.yaml
 $ kubectl exec <name_of_the_pod> -- curl -s http://address
 ```
 Note: you will hit the same pod 
+
+5. Accessing the bash shell in a container inside a pod
+``` bash
+$ kubectl exec -it <pods name> bash
+```
