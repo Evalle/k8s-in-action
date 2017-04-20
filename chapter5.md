@@ -25,3 +25,16 @@ Note: you will hit the same pod
 ``` bash
 $ kubectl exec -it <pods name> bash
 ```
+
+Example:
+```
+  $ kubectl exec -it kubapp-ds72z bash
+  root@kubapp-ds72z:/# curl http://kubapp
+  You've hit kubapp-ds72z
+  root@kubapp-ds72z:/# curl http://kubapp.default
+  You've hit kubapp-ds72z
+  root@kubapp-ds72z:/# cat /etc/resolv.conf
+  search default.svc.cluster.local svc.cluster.local cluster.local
+  nameserver 10.0.0.10
+  options ndots:5
+```
