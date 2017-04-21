@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-service
+spec:
+  # Service type is set to ExternalName
+  type: ExternalName
+  # the FQDN of the actual service
+  externalName: someapi.somecompany.com
+  ports:
+  - port: 80
