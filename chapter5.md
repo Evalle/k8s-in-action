@@ -38,3 +38,15 @@ Example:
   nameserver 10.0.0.10
   options ndots:5
 ```
+
+6. Create endpoints and service separately:
+``` bash
+$ kubectl create -f kubapp-endpoints.yaml
+$ kubectl create -f kubapp-manual-svc-endpoint.yaml
+```
+
+Check service' functionality via:
+``` bash 
+$ kubectl exec <name of the pod> -- curl http://ip_of_the_service
+```
+
