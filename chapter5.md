@@ -50,3 +50,5 @@ Check service' functionality via:
 $ kubectl exec <name of the pod> -- curl http://ip_of_the_service
 ```
 
+7. An example of the ExternalName service can be found [here](Chapter_5/externalname.yaml)
+
