@@ -5,9 +5,10 @@ metadata:
   # Must be the same as the service name 
   name: external-service
 subsets:
-  addresses:
-  - ip: 11.11.11.11
-  - ip: 22.22.22.22
-  ports:
-  - port: 80
+  - addresses:
+    - ip: 172.17.0.4
+    - ip: 172.17.0.5
+    - ip: 172.17.0.6
+    ports:
+    - port: 8080
 ...
