@@ -52,3 +52,5 @@ $ kubectl exec <name of the pod> -- curl http://ip_of_the_service
 
 7. An example of the ExternalName service can be found [here](Chapter_5/externalname.yaml)
 
+8. An example of exposing service externally by setting an external IP address
+on it can be found [here](Chapter_5/external_IP.yaml)
