@@ -54,3 +54,5 @@ $ kubectl exec <name of the pod> -- curl http://ip_of_the_service
 
 8. An example of exposing service externally by setting an external IP address
 on it can be found [here](Chapter_5/external_IP.yaml)
+
+9. An example of a NodePort service can be found [here](Chapter_5/nodeport.yaml)
