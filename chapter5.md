@@ -1,5 +1,5 @@
 ## Chapter 5  
-
+ 
 1. To create a service run
 ``` bash
 $ kubectl create -f kubapp-svc.yaml
@@ -58,3 +58,8 @@ on it can be found [here](Chapter_5/external_IP.yaml)
 9. An example of a NodePort service can be found [here](Chapter_5/nodeport.yaml)
 
 10. An example of a LoadBalancer service can be found [here](Chapter_5/kubapp-loadbalancer.yaml)
+
+If you wanna test it with Minikube, run 
+``` bash
+$ minikube service <name of the service>
+``` 
