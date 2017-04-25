@@ -56,3 +56,5 @@ $ kubectl exec <name of the pod> -- curl http://ip_of_the_service
 on it can be found [here](Chapter_5/external_IP.yaml)
 
 9. An example of a NodePort service can be found [here](Chapter_5/nodeport.yaml)
+
+10. An example of a LoadBalancer service can be found [here](Chapter_5/kubapp-loadbalancer.yaml)
