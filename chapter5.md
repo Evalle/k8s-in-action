@@ -63,3 +63,9 @@ If you wanna test it with Minikube, run
 ``` bash
 $ minikube service <name of the service>
 ``` 
+
+11. For Ingress testing, activate Ingress addon in minikube first:
+```
+$ minikube addons enable ingress
+```
+
