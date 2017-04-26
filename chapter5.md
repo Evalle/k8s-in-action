@@ -110,6 +110,17 @@ kubapp-fvhv7   0/1       Running   0          9m
 kubapp-lvlxr   0/1       Running   0          9m
 ```
 To make one of the pods ready run
+```
+$ kubectl exec kubapp-7hfz8 -- touch /var/ready
+```
+Check pod's status again
+```
+$ kubectl get po 
+NAME           READY     STATUS    RESTARTS   AGE
+kubapp-7hfz8   1/1       Running   0          12m
+kubapp-fvhv7   0/1       Running   0          12m
+kubapp-lvlxr   0/1       Running   0          12m
+```
  
 
 
