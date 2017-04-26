@@ -65,8 +65,22 @@ $ minikube service <name of the service>
 ``` 
 
 11. For the Ingress testing, activate Ingress addon in minikube first:
-```
+``` bash
 $ minikube addons enable ingress
 ```
 then create the Ingress service (example is [here](Chapter_5/ingress.yaml))
+``` bash
+$ kubectl create -f ingress.yaml
+```
+check that Ingress service was created successfully
+```bash
+$ kubectl get ing
+NAME             HOSTS                ADDRESS          PORTS     AGE
+kubapp-ingress   kubapp.example.com   192.168.99.100   80        18h
+```
+check Ingress functionality:
+``` bash
+$ curl 192.168.99.100
+```
+
 
