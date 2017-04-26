@@ -83,4 +83,34 @@ check Ingress functionality:
 $ curl 192.168.99.100
 ```
 
+## Readiness Probes
+Edit RC settings:
+``` bash
+$ kubectl edit rc kubapp
+```
+and add something like:
+```
+spec:
+  containers:
+  - name: kubapp
+    image: evalle/kubapp
+    readinessProbe:
+      exec:
+        command:
+        - ls
+        - /var/ready
+ ```
+ then delete your previos pods and check pods again:
+ ```
+ $ kubectl delete po --all
+ $ kubectl get po
+ NAME           READY     STATUS    RESTARTS   AGE
+kubapp-7hfz8   0/1       Running   0          9m
+kubapp-fvhv7   0/1       Running   0          9m
+kubapp-lvlxr   0/1       Running   0          9m
+```
+To make one of the pods ready run
+ 
+
+
 
