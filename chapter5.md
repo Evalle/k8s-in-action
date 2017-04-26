@@ -64,8 +64,9 @@ If you wanna test it with Minikube, run
 $ minikube service <name of the service>
 ``` 
 
-11. For Ingress testing, activate Ingress addon in minikube first:
+11. For the Ingress testing, activate Ingress addon in minikube first:
 ```
 $ minikube addons enable ingress
 ```
+then create the Ingress service (example is [here](Chapter_5/ingress.yaml))
 
