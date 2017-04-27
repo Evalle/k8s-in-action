@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubapp-headless
+spec:
+  clusterIP: None
+  ports: 
+  - port: 80
+    targetPort: 8080
+  selector: 
+    app: kubapp
+...

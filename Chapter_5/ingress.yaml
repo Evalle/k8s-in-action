@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubapp-ingress
+spec:
+  rules:
+  - host: kubapp.example.com
+    http:
+      paths:
+        - path: /kubapp
+          backend: 
+            serviceName: kubapp
+            servicePort: 80
+...
