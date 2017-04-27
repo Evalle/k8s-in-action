@@ -126,7 +126,9 @@ kubapp-lvlxr   0/1       Running   0          12m
 ```
 $ kubectl run dnsutils --image=tutum/dnsutils --generator=run-pod/v1 \
   --command -- sleep infinity
+pod "dnsutils" created  
 ```
+
 
 
 
