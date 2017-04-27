@@ -121,7 +121,13 @@ kubapp-7hfz8   1/1       Running   0          12m
 kubapp-fvhv7   0/1       Running   0          12m
 kubapp-lvlxr   0/1       Running   0          12m
 ```
- 
+
+## Running a pod without writing a YAML manifest
+```
+$ kubectl run dnsutils --image=tutum/dnsutils --generator=run-pod/v1 \
+  --command -- sleep infinity
+```
+
 
 
 
