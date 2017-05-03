@@ -6,7 +6,7 @@ metadata:
 spec:
   volumes:
   - name: mongodb-data
-    gcePersistentDisK: 
+    gcePersistentDisk: 
       pdName: mongodb
       fsType: ext4
   containers:
