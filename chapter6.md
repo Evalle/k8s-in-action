@@ -44,3 +44,6 @@ Hello there.
 </body>
 </html>
 ```
+
+## Persistent storage
+You can use **GCE Persistent Disk** via [**gcePersistentDisk**](https://github.com/Evalle/k8s-in-action/blob/master/Chapter_6/persistent-gce.yaml) notation or **AWS** via [**awsElasticBlockStore**](https://github.com/Evalle/k8s-in-action/blob/master/Chapter_6/persistent-aws.yaml), **Microsoft Azure** via **AzureFileVolume** notation or even **NFS Server** via [**nfs**]() notation
