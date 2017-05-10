@@ -49,5 +49,5 @@ Hello there.
 You can use **GCE Persistent Disk** via [**gcePersistentDisk**](https://github.com/Evalle/k8s-in-action/blob/master/Chapter_6/persistent-gce.yaml) notation or **AWS** via [**awsElasticBlockStore**](https://github.com/Evalle/k8s-in-action/blob/master/Chapter_6/persistent-aws.yaml), **Microsoft Azure** via **AzureFileVolume** notation or even **NFS Server** via [**nfs**](https://github.com/Evalle/k8s-in-action/blob/master/Chapter_6/persistent-nfs.yaml) notation. Also you can use iscsi, glusterfs, rbd, cinder, flexvolume, cephfs, cinder, fc, flocker. \
 
 ## Decoupling actual storage with PersistentVolumes (Administrator - specific) and PersistentVolumeClaims (developer-specific)
-
+**PersistentVolume** yaml file example can be found [here](https://github.com/Evalle/k8s-in-action/blob/master/Chapter_6/persistent-volume.yaml)
 
