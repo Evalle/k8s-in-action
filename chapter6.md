@@ -54,8 +54,8 @@ You can use **GCE Persistent Disk** via [**gcePersistentDisk**](https://github.c
 ### Example of NFS Volume:
 ### NFS server part
 
-Define [NFS server pod](Chapter_6/nfs-server-pod.yaml) and
-[NFS service](Chapter6/nfs-server-service.yaml):
+Define [NFS server pod](Chapter_6/nfs-things/nfs-server-pod.yaml) and
+[NFS service](Chapter6/nfs-things/nfs-server-service.yaml):
 
     $ kubectl create -f nfs-server-pod.yaml
     $ kubectl create -f nfs-server-service.yaml

@@ -1,0 +1,17 @@
+apiVersion: v1beta1
+kind: Pod
+id: nfs-server
+desiredState:
+  manifest:
+    version: v1beta1
+    id: nfs-server
+    containers:
+      - name: nfs-server
+        image: jsafrane/nfs-data
+        privileged: true
+        ports:
+          - name: nfs
+            containerPort: 2049
+            protocol: tcp
+labels:
+  name: nfs-server
