@@ -53,10 +53,10 @@ You can use **GCE Persistent Disk** via [**gcePersistentDisk**](https://github.c
 
 ### Example of NFS Volume:
 
-See [nfs-web-rc.yaml](nfs-things/nfs-web-rc.yaml) for a quick example of how to use an NFS
+See [nfs-web-rc.yaml](Chapter_6/nfs-things/nfs-web-rc.yaml) for a quick example of how to use an NFS
 volume claim in a replication controller. It relies on the
-[NFS persistent volume](nfs-things/nfs-pv.yaml) and
-[NFS persistent volume claim](nfs-things/nfs-pvc.yaml) in this example as well.
+[NFS persistent volume](Chapter_6/nfs-things/nfs-pv.yaml) and
+[NFS persistent volume claim](Chapter_6/nfs-things/nfs-pvc.yaml) in this example as well.
 
 ## Complete setup
 
@@ -65,12 +65,12 @@ controller and import it into two replication controllers.
 
 ### NFS server part
 
-Define [NFS server controller](nfs-things/nfs-server-rc.yaml) and
-[NFS service](nfs-things/nfs-server-service.yaml):
+Define [NFS server controller](Chapter_6/nfs-things/nfs-server-rc.yaml) and
+[NFS service](Chapter_6/nfs-things/nfs-server-service.yaml):
 
 ```console
-$ kubectl create -f nfs-things/nfs-server-rc.yaml
-$ kubectl create -f nfs-things/nfs-server-service.yaml
+$ kubectl create -f Chapter_6/nfs-things/nfs-server-rc.yaml
+$ kubectl create -f Chapter_6/nfs-things/nfs-server-service.yaml
 ```
 
 The server exports `/mnt/data` directory as `/` (fsid=0). The
@@ -79,7 +79,7 @@ by checking `kubectl get pods -lrole=nfs-server`.
 
 ### Create the NFS claim
 
-The [NFS busybox controller](nfs-things/nfs-busybox-rc.yaml) uses a simple script to
+The [NFS busybox controller](Chapter_6/nfs-things/nfs-busybox-rc.yaml) uses a simple script to
 generate data written to the NFS server we just started. First, you'll need to
 find the cluster IP of the server:
 
@@ -87,7 +87,7 @@ find the cluster IP of the server:
 $ kubectl describe services nfs-server
 ```
 
-Replace the invalid IP in the [nfs PV](nfs-things/nfs-pv.yaml). (In the future,
+Replace the invalid IP in the [nfs PV](Chapter_6/nfs-things/nfs-pv.yaml). (In the future,
 we'll be able to tie these together using the service names, but for
 now, you have to hardcode the IP.)
 
@@ -97,17 +97,17 @@ claim gives us an indirection that allow multiple pods to refer to the NFS
 server using a symbolic name rather than the hardcoded server address.
 
 ```console
-$ kubectl create -f nfs-things/nfs-pv.yaml
-$ kubectl create -f nfs-things/nfs-pvc.yaml
+$ kubectl create -f Chapter_6/nfs-things/nfs-pv.yaml
+$ kubectl create -f Chapter_6/nfs-things/nfs-pvc.yaml
 ```
 
 ## Setup the fake backend
 
-The [NFS busybox controller](nfs-things/nfs-busybox-rc.yaml) updates `index.html` on the
+The [NFS busybox controller](Chapter_6/nfs-things/nfs-busybox-rc.yaml) updates `index.html` on the
 NFS server every 10 seconds. Let's start that now:
 
 ```console
-$ kubectl create -f nfs-things/nfs-busybox-rc.yaml
+$ kubectl create -f Chapter_6/nfs-things/nfs-busybox-rc.yaml
 ```
 
 Conveniently, it's also a `busybox` pod, so we can get an early check
@@ -124,27 +124,27 @@ nfs-busybox-w3s4t
 ```
 
 You should see output similar to the above if everything is working well. If
-it's not, make sure you changed the invalid IP in the [NFS PV](nfs-things/nfs-pv.yaml) file
+it's not, make sure you changed the invalid IP in the [NFS PV](Chapter_6/nfs-things/nfs-pv.yaml) file
 and make sure the `describe services` command above had endpoints listed
 (indicating the service was associated with a running pod).
 
 ### Setup the web server
 
-The [web server controller](nfs-things/nfs-web-rc.yaml) is an another simple replication
+The [web server controller](Chapter_6/nfs-things/nfs-web-rc.yaml) is an another simple replication
 controller demonstrates reading from the NFS share exported above as a NFS
 volume and runs a simple web server on it.
 
 Define the pod:
 
 ```console
-$ kubectl create -f nfs-things/nfs-web-rc.yaml
+$ kubectl create -f Chapter_6/nfs-things/nfs-web-rc.yaml
 ```
 
 This creates two pods, each of which serve the `index.html` from above. We can
 then use a simple service to front it:
 
 ```console
-kubectl create -f nfs-things/nfs-web-service.yaml
+kubectl create -f Chapter_6/nfs-things/nfs-web-service.yaml
 ```
 
 We can then use the busybox container we launched before to check that `nginx`
