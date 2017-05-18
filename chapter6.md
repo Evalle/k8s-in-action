@@ -155,6 +155,7 @@ $ kubectl get pod -lname=nfs-busybox
 NAME                READY     STATUS    RESTARTS   AGE
 nfs-busybox-jdhf3   1/1       Running   0          1h
 nfs-busybox-w3s4t   1/1       Running   0          1h
+
 $ kubectl get services nfs-web
 NAME      LABELS    SELECTOR            IP(S)        PORT(S)
 nfs-web   <none>    role=web-frontend   10.0.68.37   80/TCP
@@ -163,4 +164,40 @@ Thu Oct 22 19:28:55 UTC 2015
 nfs-busybox-w3s4t
 ```
 
+## StorageClass objects
 
+**Storage class**
+
+``` yaml 
+---
+apiVersion: storage.k8s.io/v1beta1
+kind: StorageClass
+metadata: 
+  name: standard
+# the volume plugin to use for provisioning the persistent volume
+provisioner: kubernetes.io/gce-pd
+parameters:
+# the parameters passed to the provisioner
+  type: pd-standard
+  zone: europe-west1-b
+...
+```
+
+**Persistent Volume Claim**
+
+``` yaml
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: 
+  name: mondodb-pvc
+  annotations:
+    volume.beta.kubernetes.io/storage-class: standard
+spec:
+  resources: 
+    requests: 
+      storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+...
+```
