@@ -4,18 +4,18 @@
 Auxiliary files for the emptyDir pod's example can be found [here](Chapter_6)
 
 To build the image run
-``` bash
+``` console
 $ docker build -t <your_name>/fortune .
 $ docker push <your_name>/fortune
 ```
 To create a Kubernetes' pod run
-``` bash
+``` console
 $ kubectl create -f fortune-pod.yaml
 $ kubectl port-forward fortune 8080:80
 ```
 
 Test it from your localmachine
-```bash
+```console
 $ curl http://localhost:8080
 You will obey or molten silver will be poured into your ears.
 ```
@@ -25,18 +25,18 @@ You will obey or molten silver will be poured into your ears.
 Auxiliary files for the gitRepo pod's example can be found [here](Chapter_6)
 
 To build the image run
-``` bash
+``` console
 $ docker build -t <your_name>/fortune .
 $ docker push <your_name>/fortune
 ```
 To create a Kubernetes' pod run
-``` bash
+``` console
 $ kubectl create -f fortune-pod.yaml
 $ kubectl port-forward fortune 8080:80
 ```
 
 Test it from your localmachine
-```bash
+``` console
 $ curl http://localhost:8080
 <html>
 <body>
