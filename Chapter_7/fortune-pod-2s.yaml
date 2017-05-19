@@ -5,10 +5,22 @@ metadata:
   name: fortune2s
 spec:
   containers:
-  - image: evalle/fortune:arg
+  - image: evalle/fortune:args
     args: ["2"]
     name: html-generator
     volumeMounts:
     - name: html 
-      mountpath: /var/htdocs
+      mountPath: /var/htdocs
+  - image: nginx:alpine
+    name: web-server
+    volumeMounts:
+    - name: html
+      mountPath: /usr/share/nginx/html
+      readOnly: true
+    ports:
+    - containerPort: 80
+      protocol: TCP
+  volumes:
+  - name: html
+    emptyDir: {}
 ...
