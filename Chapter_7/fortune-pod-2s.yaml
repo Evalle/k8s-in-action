@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: fortune2s
+spec:
+  containers:
+  - image: evalle/fortune:arg
+    args: ["2"]
+    name: html-generator
+    volumeMounts:
+    - name: html 
+      mountpath: /var/htdocs
+...
